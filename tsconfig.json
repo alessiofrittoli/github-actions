@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"noEmit": true,
+		"strict": true,
+		"types": ["node"]
+	},
+	"include": ["**/*.ts", ".github/**/*.ts"],
+	"exclude": ["node_modules"]
+}

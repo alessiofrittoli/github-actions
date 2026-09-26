@@ -1,0 +1,38 @@
+{
+	"name": "@alessiofrittoli/github-actions",
+	"version": "0.1.0",
+	"description": "Utility library that offers reusable and composable GitHub actions",
+	"author": {
+		"name": "Alessio Frittoli",
+		"email": "info@alessiofrittoli.it",
+		"url": "https://alessiofrittoli.it"
+	},
+	"license": "MIT",
+	"funding": [
+		{
+			"type": "github",
+			"url": "https://github.com/sponsors/alessiofrittoli"
+		}
+	],
+	"keywords": [
+		"github-actions"
+	],
+	"homepage": "https://github.com/alessiofrittoli/github-actions#readme",
+	"bugs": {
+		"url": "https://github.com/alessiofrittoli/github-actions/issues",
+		"email": "info@alessiofrittoli.it"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/alessiofrittoli/github-actions.git"
+	},
+	"sideEffects": false,
+	"engines": {
+		"node": ">=24.15.0",
+		"pnpm": ">=11.27.1"
+	},
+	"devDependencies": {
+		"@types/node": "^24.13.6",
+		"typescript": "^6.0.3"
+	}
+}
