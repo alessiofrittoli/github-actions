@@ -1,0 +1,57 @@
+name: Setup pnpm and Node.js
+description: Setup pnpm and Node.js with automatic version detection.
+
+inputs:
+  node_version:
+    description: Forcibly use the given Node.js version
+    required: false
+    type: string
+  pnpm_version:
+    description: Forcibly use the given pnpm version
+    required: false
+    type: string
+  github_token:
+    required: true
+    type: string
+  npm_auth_token:
+    required: true
+    type: string
+  additional_pnpm_configs:
+    required: false
+    type: string
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6
+      with:
+        token: ${{ inputs.github_token }}
+        fetch-depth: 0 # Fetch full history for changelog generation
+
+    - name: Resolve tool versions
+      id: versions
+      shell: bash
+      run: node "${{ github.action_path }}/scripts/resolve-tool-versions.ts"
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v6
+      with:
+        version: ${{ inputs.pnpm_version || steps.versions.outputs.pnpm || '11' }}
+
+    - name: Setup additional pnpm configs
+      id: pnpm-configs
+      shell: bash
+      run: ADDITIONAL_PNPM_CONFIGS="${{inputs.additional_pnpm_configs}}" node "${{ github.action_path }}/scripts/setup-additional-pnpm-configs.ts"
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v6
+      with:
+        node-version: ${{ inputs.node_version || steps.versions.outputs.node || '24' }}
+        cache: pnpm
+
+    - shell: bash
+      name: Install dependencies
+      run: pnpm i
+      env:
+        NODE_AUTH_TOKEN: ${{ inputs.npm_auth_token }}
