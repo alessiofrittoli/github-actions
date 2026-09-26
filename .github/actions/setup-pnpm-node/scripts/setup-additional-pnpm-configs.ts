@@ -18,13 +18,9 @@ const setupAdditionalPnpmConfigs = () => {
 	configs.forEach( ( [ config, value ] ) => {
 		try {
 			execSync( `pnpm config set "${ config }" ${ value }` )
-			console.log( 'Successfully set pnpm config', { config, value } )
-			const result = JSON.stringify( { config, value }, undefined, '\n' )
-			process.stdout.write( `Successfully set pnpm config.\n${ result }` )
+			console.log( '✅ Successfully set pnpm config.', { config, value } )
 		} catch (error) {
-			console.error( 'Failed to set pnpm config', { config, value, error } )
-			const result = JSON.stringify( { config, value, error }, undefined, '\n' )
-			process.stderr.write( `Failed to set pnpm config.\n${ result }` )
+			console.error( '❌ Failed to set pnpm config.', { config, value, error } )
 		}
 	} )
 }

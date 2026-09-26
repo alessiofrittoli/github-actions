@@ -12,7 +12,7 @@ const resolveFromToolVersions = ( tool: string ): string | undefined => {
 	const version		= toolVersion?.split( /\s+/ )[ 1 ]
 
 	if ( version ) {
-		process.stdout.write( `Resolved ${ tool } version from .tool-versions file: ${ version }\n` )
+		process.stdout.write( `✅ Resolved ${ tool } version from .tool-versions file: ${ version }\n` )
 	}
 
 	return version
@@ -31,13 +31,13 @@ const resolveFromPackageEngines = ( tool: string ): string | undefined => {
 		const version = engines[ tool ]?.match( /\d+(?:\.\d+){0,2}/ )?.[ 0 ]?.toString()
 
 		if ( version ) {
-			process.stdout.write( `Resolved ${ tool } version from package.json engines: ${version}\n` )
+			process.stdout.write( `✅ Resolved ${ tool } version from package.json engines: ${version}\n` )
 		}
 
 		return version
 	} catch {
 		process.stderr.write(
-			`Failed to resolve ${ tool } version from package.json. Unable to parse the package.json file.\n`
+			`❌ Failed to resolve ${ tool } version from package.json. Unable to parse the package.json file.\n`
 		)
 	}
 }
@@ -64,14 +64,14 @@ const resolvePnpmFromPackageManager = (): string | undefined => {
 
 		if ( version ) {
 			process.stdout.write(
-				`Resolved pnpm version from package.json packageManager: ${version}\n`
+				`✅ Resolved pnpm version from package.json packageManager: ${version}\n`
 			)
 		}
 
 		return version;
 	} catch {
 		process.stderr.write(
-			`Failed to resolve pnpm version from package.json packageManager. Unable to parse the package.json file.\n`
+			`❌ Failed to resolve pnpm version from package.json packageManager. Unable to parse the package.json file.\n`
 		)
 	}
 };
@@ -86,7 +86,7 @@ const resolveNodeFromNvmrc = (): string | undefined => {
 	const version = readFileSync( '.nvmrc', 'utf-8' ).replace( /\n|\s/gi, '' )
 
 	if ( version ) {
-		process.stdout.write( `Resolved node version from .nvmrc file: ${version}\n` )
+		process.stdout.write( `✅ Resolved node version from .nvmrc file: ${version}\n` )
 	}
 
 	return version
@@ -128,7 +128,7 @@ const resolveToolVersions = () => {
 
 	if ( ! process.env.GITHUB_OUTPUT ) {
 		process.stderr.write(
-			`Failed to resolve project tool versions. The script has no output channel available. GITHUB_OUTPUT environment variable is not defined.\n`
+			`❌ Failed to resolve project tool versions. The script has no output channel available. GITHUB_OUTPUT environment variable is not defined.\n`
 		)
 		return
 	}
