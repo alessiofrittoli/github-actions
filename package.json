@@ -1,6 +1,6 @@
 {
 	"name": "@alessiofrittoli/github-actions",
-	"version": "0.1.0",
+	"version": "1",
 	"description": "Utility library that offers reusable and composable GitHub actions",
 	"type": "module",
 	"author": {
