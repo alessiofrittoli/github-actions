@@ -1,0 +1,70 @@
+name: Setup pnpm and Node.js
+description: Setup pnpm and Node.js with automatic version detection.
+
+inputs:
+  node_version:
+    required: false
+    type: string
+    description: Forcibly use the given Node.js version and skip tool version automatic resolution. Fallback `24`.
+  pnpm_version:
+    required: false
+    type: string
+    description: Forcibly use the given pnpm version and skip tool version automatic resolution. Fallback `11`.
+  github_token:
+    required: true
+    type: string
+    description: The GITHUB_TOKEN.
+  node_scope:
+    required: false
+    type: string
+    description: Optional scope for authenticating against scoped registries. Will fall back to the repository owner when using the GitHub Packages registry (https://npm.pkg.github.com/).
+  node_scope_registry:
+    required: false
+    type: string
+    description: Optional registry to set up for auth. Will set the registry in a project level .npmrc and .yarnrc file, and set up auth to read in from given node_auth_token.
+  node_auth_token:
+    required: false
+    type: string
+    description: The NODE_AUTH_TOKEN used to install private packages.
+  additional_pnpm_configs:
+    required: false
+    type: string
+    description: Additional pnpm configurations. This can be used to set different auth tokens for additional scoped packages. (e.g. //registry/url/:_authToken={{token}};//registry/url-2/:_authToken={{token-2}})
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6
+      with:
+        token: ${{ inputs.github_token }}
+        fetch-depth: 0 # Fetch full history for changelog generation
+
+    - name: Resolve tool versions
+      id: versions
+      shell: bash
+      run: node "${{ github.action_path }}/scripts/resolve-tool-versions.ts"
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v6
+      with:
+        version: ${{ inputs.pnpm_version || steps.versions.outputs.pnpm || '11' }}
+
+    - name: Setup additional pnpm configs
+      id: pnpm-configs
+      shell: bash
+      run: ADDITIONAL_PNPM_CONFIGS="${{inputs.additional_pnpm_configs}}" node "${{ github.action_path }}/scripts/setup-additional-pnpm-configs.ts"
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v6
+      with:
+        node-version: ${{ inputs.node_version || steps.versions.outputs.node || '24' }}
+        registry-url: ${{ inputs.node_scope_registry }}
+        scope: ${{ inputs.node_scope }}
+        cache: pnpm
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm i
+      env:
+        NODE_AUTH_TOKEN: ${{ inputs.node_auth_token }}

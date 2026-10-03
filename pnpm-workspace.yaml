@@ -1,0 +1,5 @@
+allowBuilds:
+  '@alessiofrittoli/fetcher': true
+  '@alessiofrittoli/type-utils': true
+minimumReleaseAgeExclude:
+  - '@alessiofrittoli/*'

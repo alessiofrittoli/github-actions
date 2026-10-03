@@ -1,0 +1,3 @@
+{
+	"extends": "@alessiofrittoli/package-configs/markdownlint/base.json"
+}
