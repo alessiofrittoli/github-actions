@@ -1,9 +1,6 @@
 {
-	"compilerOptions": {
-		"noEmit": true,
-		"strict": true,
-		"types": ["node"]
-	},
-	"include": ["**/*.ts", ".github/**/*.ts"],
-	"exclude": ["node_modules"]
+	"extends": "./tsconfig.build.json",
+	"include": [
+		"alessiofrittoli-env.d.ts"
+	]
 }

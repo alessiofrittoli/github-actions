@@ -2,6 +2,7 @@
 	"name": "@alessiofrittoli/github-actions",
 	"version": "0.1.0",
 	"description": "Utility library that offers reusable and composable GitHub actions",
+	"type": "module",
 	"author": {
 		"name": "Alessio Frittoli",
 		"email": "info@alessiofrittoli.it",
@@ -31,8 +32,33 @@
 		"node": ">=24.15.0",
 		"pnpm": ">=11.27.1"
 	},
+	"scripts": {
+		"//1a": "*********************************************************************",
+		"//1b": "*************************** LINT - RELEASE **************************",
+		"//1c": "*********************************************************************",
+		"lint": "oxlint --report-unused-disable-directives --max-warnings 0",
+		"release": "node scripts/release.ts --verbose",
+		"//2a": "*********************************************************************",
+		"//2b": "***************************** UNIT TESTS ****************************",
+		"//2c": "*********************************************************************",
+		"test": "echo \"Not implemented yet\"",
+		"test:watch": "echo \"Not implemented yet\"",
+		"test:ci": "echo \"Not implemented yet\"",
+		"//3a": "*********************************************************************",
+		"//3b": "************************ UNIT TESTS COVERAGE ************************",
+		"//3c": "*********************************************************************",
+		"test:coverage": "echo \"Not implemented yet\"",
+		"test:coverage:ci": "echo \"Not implemented yet\"",
+		"test:serve-coverage": "echo \"Not implemented yet\"",
+		"test:coverage:serve": "echo \"Not implemented yet\""
+	},
 	"devDependencies": {
+		"@alessiofrittoli/node-scripts": "^3.4.0",
+		"@alessiofrittoli/package-configs": "^1.1.0",
 		"@types/node": "^24.13.6",
+		"oxlint": "^1.86.0",
+		"prettier": "^3.9.9",
+		"prettier-plugin-sort-imports": "^1.8.11",
 		"typescript": "^6.0.3"
 	}
 }
