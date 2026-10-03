@@ -1,5 +1,5 @@
 {
-	"extends": "@alessiofrittoli/package-configs/tsconfig/configs/base.json",
+	"extends": "@alessiofrittoli/package-configs/tsconfig/base.json",
 	"include": ["**/*.ts", ".github/**/*.ts"],
 	"compilerOptions": {
 		"types": ["node"],
