@@ -12,8 +12,8 @@ importers:
         specifier: ^3.4.0
         version: 3.4.0
       '@alessiofrittoli/package-configs':
-        specifier: 1.4.0
-        version: 1.4.0(oxlint@1.86.0)(prettier-plugin-sort-imports@1.8.11(typescript@6.0.3))(prettier@3.9.9)(typescript@6.0.3)
+        specifier: ^1.5.0
+        version: 1.5.0(oxlint@1.86.0)(prettier-plugin-sort-imports@1.8.11(typescript@6.0.3))(prettier@3.9.9)(typescript@6.0.3)
       '@types/node':
         specifier: ^24.13.6
         version: 24.13.6
@@ -62,8 +62,8 @@ packages:
   '@alessiofrittoli/node-scripts@3.4.0':
     resolution: {integrity: sha512-iiZvYAGHd3wBvqDNYLa0qFG8hl0BWVTHOVgEx97npJOAtosVucS3O6YvXJgouVUU35QfszQ8KFbcKpVxrTItuQ==}
 
-  '@alessiofrittoli/package-configs@1.4.0':
-    resolution: {integrity: sha512-fCPoEz8mjxGBcC0mz/wmUAjFaJngonN4z/kilCjQ+YaiaUUpwy3c4Uwa1Y+ldlGazX/iM+Mqw51qh7XFiaxA+w==}
+  '@alessiofrittoli/package-configs@1.5.0':
+    resolution: {integrity: sha512-+ptwCnx5EeF/wtg3iXeJLHl1JPv9mHX9BJUatOwVcSzqobYXWBVdjNSIYGoyGw2FU3GOjdNvb/zi2tYh20hNjw==}
     engines: {node: '>=24.15.0', pnpm: '>=11.27.1'}
     peerDependencies:
       '@eslint/js': ^10.0.1
@@ -320,7 +320,7 @@ snapshots:
       '@alessiofrittoli/exception': 3.5.0
       '@alessiofrittoli/web-utils': 2.3.0
 
-  '@alessiofrittoli/package-configs@1.4.0(oxlint@1.86.0)(prettier-plugin-sort-imports@1.8.11(typescript@6.0.3))(prettier@3.9.9)(typescript@6.0.3)':
+  '@alessiofrittoli/package-configs@1.5.0(oxlint@1.86.0)(prettier-plugin-sort-imports@1.8.11(typescript@6.0.3))(prettier@3.9.9)(typescript@6.0.3)':
     dependencies:
       typescript: 6.0.3
     optionalDependencies:
