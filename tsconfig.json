@@ -1,6 +1,3 @@
 {
-	"extends": "./tsconfig.build.json",
-	"include": [
-		"alessiofrittoli-env.d.ts"
-	]
+	"extends": "./tsconfig.build.json"
 }
