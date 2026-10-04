@@ -10,10 +10,8 @@
 		"activityBarBadge.foreground": "#F0F0F0",
 		"activityBarBadge.background": "#CB3837"
 	},
-	"[typescript][javascript][typescriptreact][json][markdown]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.formatOnSave": true
-	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
 	"files.associations": {
 		".ignore": "ignore",
 		".gitignore": "ignore"
