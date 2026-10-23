@@ -1,0 +1,12 @@
+name: Log Environment
+
+on: ['workflow_dispatch']
+
+jobs:
+  log:
+    name: Log Environment Variables
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - run: printenv | sort

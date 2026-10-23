@@ -37,8 +37,8 @@
 		"//1b": "*************************** LINT - RELEASE **************************",
 		"//1c": "*********************************************************************",
 		"lint": "oxlint --report-unused-disable-directives --max-warnings 0",
-		"pre-release-checks": "pnpm lint && pnpm tsc",
-		"release": "node scripts/release.ts --verbose --build pre-release-checks",
+		"build": "pnpm lint && pnpm tsc",
+		"release": "node scripts/release.ts --verbose",
 		"//2a": "*********************************************************************",
 		"//2b": "***************************** UNIT TESTS ****************************",
 		"//2c": "*********************************************************************",
@@ -54,11 +54,11 @@
 		"test:coverage:serve": "echo \"Not implemented yet\""
 	},
 	"devDependencies": {
-		"@alessiofrittoli/node-scripts": "^3.4.0",
-		"@alessiofrittoli/package-configs": "^1.5.0",
+		"@alessiofrittoli/node-scripts": "^4.1.0",
+		"@alessiofrittoli/package-configs": "^1.7.0",
 		"@types/node": "^24.13.6",
-		"oxlint": "^1.86.0",
-		"prettier": "^3.9.9",
+		"oxlint": "^1.89.0",
+		"prettier": "^3.9.10",
 		"prettier-plugin-sort-imports": "^1.8.11",
 		"typescript": "^6.0.3"
 	}
