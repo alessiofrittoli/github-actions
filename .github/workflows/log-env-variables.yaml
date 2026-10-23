@@ -1,6 +1,6 @@
 name: Log Environment
 
-on: ['workflow_dispatch']
+on: ['push']
 
 jobs:
   log:
