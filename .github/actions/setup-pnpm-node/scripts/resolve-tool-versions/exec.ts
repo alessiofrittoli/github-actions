@@ -1,3 +1,3 @@
-import { resolveToolVersions } from './functions'
+import { resolveToolVersions } from './functions.ts'
 
 resolveToolVersions()
