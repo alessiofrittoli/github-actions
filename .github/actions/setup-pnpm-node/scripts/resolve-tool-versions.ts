@@ -120,7 +120,7 @@ const resolve = (tool: keyof typeof resolvers): string | undefined => {
 	}
 }
 
-const resolveToolVersions = (): void => {
+export const resolveToolVersions = (): void => {
 	if (!process.env.GITHUB_OUTPUT) {
 		process.stderr.write(
 			`❌ Failed to resolve project tool versions. The script has no output channel available. GITHUB_OUTPUT environment variable is not defined.\n`,
@@ -134,5 +134,3 @@ const resolveToolVersions = (): void => {
 		[`pnpm=${resolve('pnpm') || ''}`, `node=${resolve('node') || ''}`].join('\n') + '\n',
 	)
 }
-
-resolveToolVersions()
