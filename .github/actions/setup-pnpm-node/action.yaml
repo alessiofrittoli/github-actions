@@ -17,7 +17,7 @@ inputs:
   node_scope:
     required: false
     type: string
-    description: Optional scope for authenticating against scoped registries. Will fall back to the repository owner when using the GitHub Packages registry (https://npm.pkg.github.com/).
+    description: Optional scope for authenticating against scoped registries. Will fall back to the repository owner when using the GitHub Packages registry.
   node_scope_registry:
     required: false
     type: string
