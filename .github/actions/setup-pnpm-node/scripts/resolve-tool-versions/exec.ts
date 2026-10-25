@@ -1,3 +1,3 @@
 import { resolveToolVersions } from './functions.ts'
 
-resolveToolVersions()
+resolveToolVersions(['pnpm', 'node'])
