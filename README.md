@@ -6,28 +6,6 @@
   <a href="https://coveralls.io/github/alessiofrittoli/github-actions">
     <img src="https://coveralls.io/repos/github/alessiofrittoli/github-actions/badge.svg" alt="Test coverage"/>
   </a>
-  <a href="https://socket.dev/npm/package/@alessiofrittoli/github-actions/overview">
-    <img src="https://socket.dev/api/badge/npm/package/@alessiofrittoli/github-actions" alt="Socket Security score"/>
-  </a>
-  <a href="https://bundlephobia.com/package/@alessiofrittoli/github-actions">
-    <img src="https://badgen.net/bundlephobia/dependency-count/@alessiofrittoli/github-actions" alt="Dependencies"/>
-  </a>
-  <a href="https://libraries.io/npm/%40alessiofrittoli%2Fgithub-actions">
-    <img src="https://img.shields.io/librariesio/release/npm/@alessiofrittoli/github-actions" alt="Dependencies status"/>
-  </a>
-</p>
-<p align="center">
-  <a href="https://bundlephobia.com/package/@alessiofrittoli/github-actions">
-    <img src="https://badgen.net/bundlephobia/min/@alessiofrittoli/github-actions" alt="minified"/>
-  </a>
-  <a href="https://bundlephobia.com/package/@alessiofrittoli/github-actions">
-    <img src="https://badgen.net/bundlephobia/minzip/@alessiofrittoli/github-actions" alt="minizipped"/>
-  </a>
-  <a href="https://bundlephobia.com/package/@alessiofrittoli/github-actions">
-    <img src="https://badgen.net/bundlephobia/tree-shaking/@alessiofrittoli/github-actions" alt="Tree shakable"/>
-  </a>
-</p>
-<p align="center">
   <a href="https://github.com/sponsors/alessiofrittoli">
     <img src="https://img.shields.io/static/v1?label=Fund%20this%20package&message=%E2%9D%A4&logo=GitHub&color=%23DB61A2" alt="Fund this package"/>
   </a>

@@ -16,6 +16,7 @@ jobs:
         uses: $/.github/actions/setup-pnpm-node
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          additional_pnpm_configs: nodeVersion=18.0.0
 
       - name: Linting
         run: pnpm lint
