@@ -1,0 +1,9 @@
+{
+	"recommendations": [
+		"esbenp.prettier-vscode",
+		"vitest.explorer",
+		"davidanson.vscode-markdownlint",
+		"oxc.oxc-vscode"
+	],
+	"unwantedRecommendations": []
+}

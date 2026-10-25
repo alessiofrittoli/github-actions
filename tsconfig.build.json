@@ -1,6 +1,6 @@
 {
 	"extends": "@alessiofrittoli/package-configs/tsconfig/base.json",
-	"include": ["**/*.ts", ".github/**/*.ts"],
+	"include": ["**/*.ts", "**/.github/**/**/*.ts"],
 	"compilerOptions": {
 		"types": ["node"],
 		"paths": {
