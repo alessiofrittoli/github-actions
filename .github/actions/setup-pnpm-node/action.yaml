@@ -53,7 +53,7 @@ runs:
     - name: Setup additional pnpm configs
       id: pnpm-configs
       shell: bash
-      run: ADDITIONAL_PNPM_CONFIGS="${{inputs.additional_pnpm_configs}}" node "${{ github.action_path }}/scripts/setup-additional-pnpm-configs.ts"
+      run: ADDITIONAL_PNPM_CONFIGS="${{inputs.additional_pnpm_configs}}" node "${{ github.action_path }}/scripts/setup-additional-pnpm-configs/exec.ts"
 
     - name: Setup Node.js
       uses: actions/setup-node@v6
