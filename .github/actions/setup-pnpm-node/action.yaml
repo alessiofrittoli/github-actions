@@ -43,7 +43,7 @@ runs:
     - name: Resolve tool versions
       id: versions
       shell: bash
-      run: node "${{ github.action_path }}/scripts/resolve-tool-versions.ts"
+      run: node "${{ github.action_path }}/scripts/resolve-tool-versions/exec.ts"
 
     - name: Setup pnpm
       uses: pnpm/action-setup@v6
